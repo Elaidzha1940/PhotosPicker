@@ -4,6 +4,8 @@ How to use PhotosPicker in SwiftUI & PhotosUI.
 Here's how to effectively use the PhotosPicker in SwiftUI with the power of PhotosUI framework:
 -----------------------------------------------------------------------------------------------
 
+https://github.com/Elaidzha1940/PhotosPicker/assets/64445918/5b749039-eaee-4f4c-a956-b34d90e20e4e
+
 Task:
 -----
 
