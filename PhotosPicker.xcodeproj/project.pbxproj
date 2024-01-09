@@ -10,7 +10,7 @@
 		E414AD1C2B4DF31900955E43 /* PhotosPickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414AD1B2B4DF31900955E43 /* PhotosPickerApp.swift */; };
 		E414AD202B4DF31A00955E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E414AD1F2B4DF31A00955E43 /* Assets.xcassets */; };
 		E414AD232B4DF31A00955E43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E414AD222B4DF31A00955E43 /* Preview Assets.xcassets */; };
-		E414AD2A2B4DF33200955E43 /* PhotosPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414AD292B4DF33200955E43 /* PhotosPicker.swift */; };
+		E48FF55C2B4DFA42009E9933 /* PhotosPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48FF55B2B4DFA42009E9933 /* PhotosPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +18,7 @@
 		E414AD1B2B4DF31900955E43 /* PhotosPickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerApp.swift; sourceTree = "<group>"; };
 		E414AD1F2B4DF31A00955E43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E414AD222B4DF31A00955E43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E414AD292B4DF33200955E43 /* PhotosPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPicker.swift; sourceTree = "<group>"; };
+		E48FF55B2B4DFA42009E9933 /* PhotosPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				E414AD1B2B4DF31900955E43 /* PhotosPickerApp.swift */,
-				E414AD292B4DF33200955E43 /* PhotosPicker.swift */,
+				E48FF55B2B4DFA42009E9933 /* PhotosPickerView.swift */,
 				E414AD1F2B4DF31A00955E43 /* Assets.xcassets */,
 				E414AD212B4DF31A00955E43 /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E414AD2A2B4DF33200955E43 /* PhotosPicker.swift in Sources */,
+				E48FF55C2B4DFA42009E9933 /* PhotosPickerView.swift in Sources */,
 				E414AD1C2B4DF31900955E43 /* PhotosPickerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
