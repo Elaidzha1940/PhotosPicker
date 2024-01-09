@@ -19,17 +19,17 @@ final class PhotosPickerViewModel: ObservableObject {
         }
     }
     
+    @Published private(set) var selectedImages: [UIImage] = []
+    @Published var imageSelections: [PhotosPickerItem] = [] {
+        didSet {
+            setImages(from: imageSelections)
+        }
+    }
+    
     private func setImage(from selection: PhotosPickerItem?) {
         guard let selection else { return }
         
         Task {
-//            if let data = try? await selection.loadTransferable(type: Data.self) {
-//                if let uiImage = UIImage(data: data) {
-//                    selectedImage = uiImage
-//                    return
-//                }
-//            }
-            
             do {
                 let data = try? await selection.loadTransferable(type: Data.self)
                 guard let data, let uiImage = UIImage(data: data) else {
@@ -39,7 +39,20 @@ final class PhotosPickerViewModel: ObservableObject {
             } catch {
                 print(error)
             }
-            
+        }
+    }
+    
+    private func setImages(from selections: [PhotosPickerItem]) {
+        Task {
+            var images: [UIImage] = []
+            for selection in selections {
+                if let data = try? await selection.loadTransferable(type: Data.self) {
+                    if let uiImage = UIImage(data: data) {
+                        images.append(uiImage)
+                    }
+                }
+            }
+            selectedImages = images
         }
     }
 }
@@ -59,8 +72,28 @@ struct PhotosPickerView: View {
                     .frame(width: 250, height: 250)
             }
             
-            PhotosPicker(selection: $viewModel.imageSelection) {
+            PhotosPicker(selection: $viewModel.imageSelection, matching: .images) {
                 Text("Open the photo picker")
+                    .font(.system(size: 25, weight: .bold, design: .monospaced))
+                    .foregroundStyle(.white)
+            }
+            
+            if !viewModel.selectedImages.isEmpty {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(viewModel.selectedImages, id: \.self) { image in
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .cornerRadius(15)
+                                .frame(width: 250, height: 250)
+                        }
+                    }
+                }
+            }
+            
+            PhotosPicker(selection: $viewModel.imageSelections, matching: .images) {
+                Text("Open the photos picker")
                     .font(.system(size: 25, weight: .bold, design: .monospaced))
                     .foregroundStyle(.white)
             }
