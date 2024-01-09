@@ -11,7 +11,7 @@ Task:
 
 ``````ruby
 
-Task {
+ Task {
             if let data = try? await selection.loadTransferable(type: Data.self) {
                 if let uiImage = UIImage(data: data) {
                     selectedImage = uiImage
